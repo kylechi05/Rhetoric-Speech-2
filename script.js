@@ -7,6 +7,7 @@ scrollButton[1].addEventListener("click", down);
 
 
 let clicks = 0;
+slides[clicks].scrollIntoView();
 
 function down() {
     if (clicks < slides.length - 1) {
