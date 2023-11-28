@@ -4,6 +4,7 @@ const slides = document.getElementsByClassName("slides");
 scrollButton[0].addEventListener("click", up);
 scrollButton[1].addEventListener("click", down);
 
+var i = 0;
 let clicks = 0;
 slides[clicks].scrollIntoView();
 
@@ -16,6 +17,7 @@ function up() {
 }
 
 function down() {
+    i = 0
     if (clicks < slides.length - 1) {
         clicks++;
         console.log("Scrolled to " + clicks);
@@ -24,20 +26,58 @@ function down() {
 }
 
 
+// Intro Slide Images
+const intro = document.getElementById("intro");
+const introMedia = document.getElementsByClassName("introMedia");
+const introVid = document.getElementById("introVid");
+intro.addEventListener("click", () => advanceMedia(introMedia));
 
-// Image Iterator for each slide
-var i = 0;
-
-// Shows Image on Click
-function advanceOne(imageArray) {
-    console.log('hei');
-    if (i < imageArray.length){
-        imageArray[i].style.display = 'block';
+function advanceMedia(media) {
+    console.log(i);
+    if (i < media.length){
+        media[i].style.display = "block";
+        if (i == 2) {
+            media[0].style.display = "none";
+            media[1].style.display = "none";
+        } else if (i > 2) {
+            media[i-1].style.display = "none";
+        }
+        if (media[i] == introVid) {
+            introVid.play();
+        }
         i++;
     }
 }
 
-// Intro Slide Images
-const intro = document.getElementById("intro");
-const introImages = document.getElementsByClassName("introImages");
-intro.addEventListener("click", () => advanceOne(introImages));
+
+// Missinformation Slide Images
+const miss = document.getElementById("miss");
+const missMedia = document.getElementsByClassName("missMedia");
+miss.addEventListener("click", () => advanceNormal(missMedia));
+
+const cap = document.getElementById("cap");
+const capMedia = document.getElementsByClassName("capMedia");
+cap.addEventListener("click", () => advanceNormal(capMedia));
+
+function advanceNormal(media) {
+    console.log(i);
+    if (i < media.length){
+        media[i].style.display = "block";
+        if (i > 0) {
+            media[i-1].style.display = "none";
+        }
+        i++;
+    }
+}
+
+const how = document.getElementById("how");
+const howMedia = document.getElementsByClassName("howMedia");
+how.addEventListener("click", () => advanceHow(howMedia));
+
+function advanceHow(media) {
+    console.log(i);
+    if (i < media.length) {
+        media[i].style.display = "block";
+    }
+    // add the part where you can show multiple companies atst
+}

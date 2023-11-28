@@ -49,13 +49,34 @@ button:active {
     width: 100%;
 }
 
-.introImages {
+.introMedia {
     display: none;
-    position: absolute;
     margin-right: min(30vh);
     max-width: 80%;
 }
 
 #title {
     font-size: 50px;
+}
+
+#missinfo {
+    position: absolute;
+    top: 210vh;
+}
+
+.centerMedia {
+    display: none;
+    transform: translate(0, +10%);
+    max-width: 80%;
+    max-height: 80%;
+}
+
+#capinfo {
+    position: absolute;
+    top: 310vh;
+}
+
+#howinfo {
+    position: absolute;
+    top: 410vh;
 }
