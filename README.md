@@ -1,2 +1,2 @@
 # Rhetoric-Speech-2
-This is my project for Rhetoric Speech Two
+This is my research project for Rhetoric Speech Two: AI is Dangerous
