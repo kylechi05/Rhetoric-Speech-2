@@ -50,14 +50,9 @@ function advanceMedia(media) {
 }
 
 
-// Missinformation Slide Images
 const miss = document.getElementById("miss");
 const missMedia = document.getElementsByClassName("missMedia");
 miss.addEventListener("click", () => advanceNormal(missMedia));
-
-const cap = document.getElementById("cap");
-const capMedia = document.getElementsByClassName("capMedia");
-cap.addEventListener("click", () => advanceNormal(capMedia));
 
 function advanceNormal(media) {
     console.log(i);
@@ -70,6 +65,34 @@ function advanceNormal(media) {
     }
 }
 
+const cap = document.getElementById("cap");
+const capMedia = document.getElementsByClassName("capMedia");
+cap.addEventListener("click", () => advanceCap(capMedia));
+
+function advanceCap(media) {
+    console.log(i);
+    if (i < media.length){
+        media[i].style.display = "block";
+        if (i > 0 && i < media.length - 4) {
+            media[i-1].style.display = "none";
+        }
+        i++;
+    }
+}
+
+const other = document.getElementById("other");
+const otherMedia = document.getElementsByClassName("otherMedia");
+other.addEventListener("click", () => advanceOther(otherMedia));
+
+function advanceOther(media) {
+    console.log(i);
+    if (i < media.length) {
+        media[i].style.display = "block";
+    }
+    i++;
+}
+
+
 const how = document.getElementById("how");
 const howMedia = document.getElementsByClassName("howMedia");
 how.addEventListener("click", () => advanceHow(howMedia));
@@ -77,7 +100,8 @@ how.addEventListener("click", () => advanceHow(howMedia));
 function advanceHow(media) {
     console.log(i);
     if (i < media.length) {
-        media[i].style.display = "block";
+        media[i].style.display = "inline-block";
     }
     // add the part where you can show multiple companies atst
+    i++;
 }

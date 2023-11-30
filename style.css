@@ -71,12 +71,58 @@ button:active {
     max-height: 80%;
 }
 
+h2 {
+    font-size: 100px;
+}
+
 #capinfo {
     position: absolute;
     top: 310vh;
 }
 
-#howinfo {
+#leftCap1 {
+    position: absolute;
+    left: 20vw;
+    transform: rotate(25deg);
+}
+
+#leftCap2 {
+    position: absolute;
+    left: 10vw;
+    transform: rotate(-25deg);
+}
+
+#rightCap1 {
+    position: absolute;
+    right: 20vw;
+    transform: rotate(-25deg);
+}
+
+#rightCap2 {
+    position: absolute;
+    right: 10vw;
+    transform: rotate(25deg);
+}
+
+#otherinfo {
     position: absolute;
     top: 410vh;
+}
+
+#other_vert{
+    flex-direction: column;
+}
+
+.otherMedia {
+    display: none;
+    text-align: center;
+    font-size: 65px;
+    margin: 50px;
+}
+
+
+
+#howinfo {
+    position: absolute;
+    top: 510vh;
 }
