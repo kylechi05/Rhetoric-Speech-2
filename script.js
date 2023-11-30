@@ -30,9 +30,9 @@ function down() {
 const intro = document.getElementById("intro");
 const introMedia = document.getElementsByClassName("introMedia");
 const introVid = document.getElementById("introVid");
-intro.addEventListener("click", () => advanceMedia(introMedia));
+intro.addEventListener("click", () => advanceIntro(introMedia));
 
-function advanceMedia(media) {
+function advanceIntro(media) {
     console.log(i);
     if (i < media.length){
         media[i].style.display = "block";
@@ -88,8 +88,8 @@ function advanceOther(media) {
     console.log(i);
     if (i < media.length) {
         media[i].style.display = "block";
+        i++;
     }
-    i++;
 }
 
 
@@ -100,8 +100,65 @@ how.addEventListener("click", () => advanceHow(howMedia));
 function advanceHow(media) {
     console.log(i);
     if (i < media.length) {
-        media[i].style.display = "inline-block";
+        media[i].style.display = "block";
+        if (i > 0 && i < media.length - 7 && i != 1 && i != 2 && i != 3) {
+            media[i-1].style.display = "none";
+        }
+        if (i == 1){
+            media[0].style.display = "none";
+        }
+        if (i == 4) {
+            media[1].style.display = "none";
+            media[2].style.display = "none"
+        }
+        i++;
     }
-    // add the part where you can show multiple companies atst
-    i++;
+}
+
+
+const solve = document.getElementById("solve");
+const solveMedia = document.getElementsByClassName("solveMedia");
+solve.addEventListener("click", () => advanceSolve(solveMedia));
+
+function advanceSolve(media){
+    console.log(i);
+    if (i < media.length) {
+        media[i].style.display = "flex";
+        if (i > 0) {
+            media[i-1].style.display = "none";
+        }
+        i++;
+    }
+}
+
+
+const action = document.getElementById("action");
+const actionMedia = document.getElementsByClassName("actionMedia");
+action.addEventListener("click", () => advanceAction(actionMedia));
+
+function advanceAction(media){
+    console.log(i);
+    if (i < media.length) {
+        media[i].style.display = "flex";
+        if (i > 0) {
+            media[i-1].style.display = "none";
+        }
+        i++;
+    }
+}
+
+
+const proof = document.getElementById("proof");
+const proofMedia = document.getElementsByClassName("proofMedia");
+action.addEventListener("click", () => advanceProof(proofMedia));
+
+function advanceProof(media){
+    console.log(i);
+    if (i < media.length) {
+        media[i].style.display = "flex";
+        if (i > 0) {
+            media[i-1].style.display = "none";
+        }
+        i++;
+    }
 }
