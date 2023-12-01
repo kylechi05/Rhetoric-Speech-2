@@ -124,7 +124,7 @@ function advanceSolve(media){
     console.log(i);
     if (i < media.length) {
         media[i].style.display = "flex";
-        if (i > 0) {
+        if (i > 0 && i < media.length) {
             media[i-1].style.display = "none";
         }
         i++;
@@ -140,8 +140,28 @@ function advanceAction(media){
     console.log(i);
     if (i < media.length) {
         media[i].style.display = "flex";
-        if (i > 0) {
+        if (i > 1 && i < media.length - 1) {
             media[i-1].style.display = "none";
+            if (i == 2) {
+                media[0].style.display = "none";
+                media[i].style.display = "grid";
+                for (let k = 0; k < 400; k++) {
+                    const span = document.createElement("span");
+                    span.className = "material-symbols-outlined tiles4";
+                    span.textContent = "person";
+                    media[i].appendChild(span);
+                }
+            }
+            if (i == 4) {
+                media[i].style.display = "grid";
+                for (let k = 0; k < 3000; k++) {
+                    const span = document.createElement("span");
+                    span.className = "material-symbols-outlined tiles30";
+                    span.id = "h" + String(k);
+                    span.textContent = "payments";
+                    media[i].appendChild(span);
+                }
+            }
         }
         i++;
     }
