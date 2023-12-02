@@ -200,3 +200,43 @@ function advanceProof(media){
         i++;
     }
 }
+
+const refutation = document.getElementById("refutation");
+const refutationMedia = document.getElementsByClassName("refutationMedia");
+refutation.addEventListener("click", () => advanceRefutation(refutationMedia));
+
+function advanceRefutation(media) {
+    console.log(i);
+    if (i < media.length) {
+        media[i].style.display = "block";
+        if (i > 0 && ![7, 8, 9, 10].includes(i)) {
+            media[i-1].style.display = "none";
+        }
+        if (i == 6) {
+            media[i].style.display = "flex";
+        }
+        if (i == 11) {
+            media[i].style.display = "flex";
+            media[6].style.display = "none";
+            media[7].style.display = "none";
+            media[8].style.display = "none";
+            media[9].style.display = "none";
+        }
+        i++;
+    }
+}
+
+const impact = document.getElementById("impact");
+const impactMedia = document.getElementsByClassName("impactMedia");
+impact.addEventListener("click", () => advanceImpact(impactMedia));
+
+function advanceImpact(media) {
+    console.log(i);
+    if (i < media.length) {
+        media[i].style.display = "block";
+        if (i > 0) {
+            media[i-1].style.display = "none";
+        }
+        i++;
+    }
+}
