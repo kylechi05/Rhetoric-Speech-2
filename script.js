@@ -49,6 +49,12 @@ function advanceIntro(media) {
     }
 }
 
+const title = document.getElementById("title");
+title.addEventListener("click", advanceTitle);
+
+function advanceTitle() {
+    title.innerHTML = "Artificial Intelligence Is Dangerous";
+}
 
 const miss = document.getElementById("miss");
 const missMedia = document.getElementsByClassName("missMedia");
@@ -73,8 +79,14 @@ function advanceCap(media) {
     console.log(i);
     if (i < media.length){
         media[i].style.display = "block";
-        if (i > 0 && i < media.length - 4) {
+        if (i > 0 && ![7, 8, 9, 10].includes(i)) {
             media[i-1].style.display = "none";
+            if (i == 11) {
+                media[6].style.display = "none";
+                media[7].style.display = "none";
+                media[8].style.display = "none";
+                media[9].style.display = "none";
+            }
         }
         i++;
     }
@@ -170,14 +182,20 @@ function advanceAction(media){
 
 const proof = document.getElementById("proof");
 const proofMedia = document.getElementsByClassName("proofMedia");
-action.addEventListener("click", () => advanceProof(proofMedia));
+proof.addEventListener("click", () => advanceProof(proofMedia));
 
 function advanceProof(media){
     console.log(i);
     if (i < media.length) {
-        media[i].style.display = "flex";
-        if (i > 0) {
+        media[i].style.display = "block";
+        if (i > 0 && i < 11) {
             media[i-1].style.display = "none";
+            if (i == 6 || i == 7) {
+                media[i].style.display = "flex";
+            }
+            if (i == 10){
+                media[i].style.display = "grid";
+            }
         }
         i++;
     }
